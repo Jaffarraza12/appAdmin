@@ -170,7 +170,8 @@ class ProductController extends Controller
         $productVariations  = ProductVariation::join('variation','variation.variation_id','=','product_variation.variation_id')->where('product_id',$id)->get();
         $productVariationValues = array();
         foreach ($productVariations as $pv){
-            $productVariationValues[$pv->variation_id] = ProductVariationValue::where('product_id',$id)->where('variation_id',$pv->variation_id)->get();
+            $productVariationValues[$pv->variation_id] = ProductVariationValue::select('product_variation_value.*','variation_value.name')->join('variation_value','variation_value.value_id','=','product_variation_value.value_id')->where('product_id',$id)->where('product_variation_value.variation_id',$pv->variation_id)->get();
+
         }
 
         if($product->image){
