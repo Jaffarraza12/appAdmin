@@ -158,16 +158,31 @@ class ProductController extends Controller
     public function show($id){
         $heading = 'Edit Product';
         $categories =  Category::orderBy('category_id', 'desc')->get();
-        $actionUrl = URL('category/'.$id);
+        $actionUrl = URL('product/'.$id);
         $product = Product::where('product_id',$id)->first();
+        $productCategories = array();
+            foreach(CategoryProduct::where('product_id',$id)->get() as $pc){
+                $productCategories[] = $pc->category_id;
+            }
+        $https_catalog = $this->HTTPS_CATALOG;
+
+        $productImages = ProductImage::where('product_id',$id)->get();
+        $productVariations  = ProductVariation::join('variation','variation.variation_id','=','product_variation.variation_id')->where('product_id',$id)->get();
+        $productVariationValues = array();
+        foreach ($productVariations as $pv){
+            $productVariationValues[$pv->variation_id] = ProductVariationValue::where('product_id',$id)->where('variation_id',$pv->variation_id)->get();
+        }
+
         if($product->image){
             $img_thumb = $this->HTTPS_CATALOG.'\\'.$product->image;
         } else {
             $img_thumb = asset('assets/images.png');
         }
+        $blank_thumb = asset('assets/images.png');
+
         $variations = Variation::get();
 
-        return view('catalog.product.form',compact('product','variations','heading','categories','actionUrl','id','method','img_thumb'));
+        return view('catalog.product.form',compact('product','blank_thumb','https_catalog','productCategories','productVariations','productVariationValues','productImages','variations','heading','categories','actionUrl','id','method','img_thumb'));
 
     }
     public function update(Request $request){

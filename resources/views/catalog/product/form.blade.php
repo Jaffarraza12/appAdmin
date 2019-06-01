@@ -163,6 +163,13 @@
                                                             <option {{$Cselect}} value="{{$category->category_id}}">{{$category->name}}</option>
                                                         @endforeach
                                                     </select>
+                                                    @elseif($productCategories)
+                                                        <select name="category[]" class="form-control form-control--fixed kt-selectpicker" multiple data-max-options="5" >
+                                                            @foreach($categories as $category)
+                                                                @php $Cselect = (in_array($category->category_id,$productCategories)) ?  'selected="selected"' : '' ;  @endphp
+                                                                <option {{$Cselect}} value="{{$category->category_id}}">{{$category->name}}</option>
+                                                            @endforeach
+                                                        </select>
                                                     @else
                                                         <select name="category[]" class="form-control form-control--fixed kt-selectpicker" multiple data-max-options="5" >
                                                             @foreach($categories as $category)
@@ -237,6 +244,14 @@
                                                             <td><br/><input type="number" class="form-control"  name="product_images_sort_order[]" value="{{  old('product_images_sort_order.'.$i) }}"  /></td>
                                                              </tr>
                                                            @endfor
+                                                     @elseif($productImages && count($productImages) > 0)
+                                                         @foreach($productImages as $image)
+                                                             <tr>
+                                                                 <td><a ><img data-multiple="1"  data-input="input-product-image-{{$image->product_image_id}}"  id="thumb-product-image-{{$image->product_image_id}}" class="img-thumbnail"  width="100" height="auto" id="img-image"  src="{{ $https_catalog.$image->image }}" alt="" title="" data-placeholder="{{ 'Image' }}" /></a>
+                                                                     <input id="input-product-image-{{$i}}" type="hidden" name="product_images[]" value="{{ $image->image }}"  /></td>
+                                                                 <td><br/><input type="number" class="form-control"  name="product_images_sort_order[]" value="{{  $image->sort_order }}"  /></td>
+                                                             </tr>
+                                                         @endforeach
                                                       @else
                                                          <tr>
                                                          <td><a ><img data-multiple="1"  data-input="input-product-image-1"  id="thumb-product-image-1" class="img-thumbnail"  width="100" height="auto" id="img-image"  src="{{ $img_thumb }}" alt="" title="" data-placeholder="{{ 'Image' }}" /></a>
@@ -244,7 +259,6 @@
                                                          <td><br/><input type="number" class="form-control"  name="product_images_sort_order[]" value="{{ ''  }}"  /></td>
                                                          </tr>
                                                       @endif
-
                                                     </tbody>
                                                 </table>
 
@@ -262,9 +276,9 @@
                                           <div class="variation-box">
                                                <div id="variation-html-1'" class="variation-html">
                                                     <div class="form-group row">
-                                                           @if(!is_null(old('variation.0')))
+                                                         @if(!is_null(old('variation.0')))
                                                             @for($i=0;$i<= count(old('variation')) - 1 ; ++$i)
-                                                             <label class="col-2 col-form-label"> {{ 'Variations' }}</label>
+                                                            <label class="col-2 col-form-label"> {{ 'Variations' }}</label>
                                                             <div class="col-8">
                                                                 <select data-elem="variation-option-{{$i}}" name="variation[]" id="input-status" class="form-control">
                                                                     <option>SELECT VARIATION</option>
@@ -274,8 +288,6 @@
                                                                             if(old('variation.'.$i) == $variation->variation_id){
                                                                               $variation_name = $variation->name ;
                                                                             }
-
-
                                                                         @endphp
                                                                         <option {{$selectV}} value="{{$variation->variation_id}}">{{$variation->name}}</option>
                                                                     @endforeach
@@ -314,6 +326,56 @@
                                                                 @endif
                                                             </div>
                                                             @endfor
+                                                        @elseif($productVariations && count($productVariations) > 0)
+                                                             @foreach($productVariations as $variat)
+                                                             <label class="col-2 col-form-label"> {{ 'Variations' }}</label>
+                                                             <div class="col-8">
+                                                                 <select data-elem="variation-option-{{$variat->variation_id}}" name="variation[]" id="input-status" class="form-control">
+                                                                     <option>SELECT VARIATION</option>
+                                                                     @foreach($variations as $variation)
+                                                                         @php
+                                                                             $selectV = ($variat->variation_id == $variation->variation_id) ? 'selected="selected"' : '' ;
+                                                                             if($variat->variation_id == $variation->variation_id){
+                                                                               $variation_name = $variation->name ;
+                                                                             }
+                                                                         @endphp
+                                                                         <option {{$selectV}} value="{{$variation->variation_id}}">{{$variation->name}}</option>
+                                                                     @endforeach
+                                                                 </select>
+                                                             </div>
+                                                             <div class="col-2"><a><i data-elem="variation-html-{{$variat->variation_id}}" class="fa fa-trash"></i></a></div>
+                                                             <div class="variation-option" id="variation-option-{{$variat->variation_id}}">
+
+                                                                 @if($productVariationValues && sizeof($productVariationValues) > 0)
+                                                                     <div class="form-group row table-responsive">
+                                                                         <h3 class="col-12 text-center" >{{$variation_name}}</h3>
+                                                                         <div class="pull-right" style="width:10%;"><label>Required</label> <select class="form-control" name="variation_required[]"><option value="1">YES</option><option value="0">NO</option></select></div>
+                                                                         <table class="table"><thead>
+                                                                             <th>Name</th><th>Image</th><th>SKU</th><th>Quantity</th><th>Subtract</th><th>Price Prefix</th><th>Price</th><th></th></thead>
+                                                                             <tbody>
+                                                                             @foreach($productVariationValues[$variat->variation_id] as $variant_values)
+                                                                                 <tr>
+                                                                                     <td>{{ $variant_values->name}} <input type="hidden" name="variation_value[{{$variat->variation_id}}][value_id][]" value="{{ $variant_values->value_id }}" /><input type="hidden" name="variation_value[{{$variat->variation_id}}][name][]" value="{{ $variant_values->name }}" /></td>
+                                                                                     @if(empty($variant_values->image))
+                                                                                         <td><a ><img  data-multiple="0" data-input="value-{{ $variant_values->value_id }}"  id="thumb-value-image-{{ $variant_values->value_id }}" class="img-thumbnail"  width="100" height="auto" id="img-image"  src="{{ $blank_thumb }}" alt="" title="" data-placeholder="Image" /></a> <input id="value-{{ $variant_values->value_id }}" type="hidden" name="variation_value[{{$variant_values->value_id}}][image][]" value="" id="input-image" /></td>
+                                                                                     @else
+                                                                                         <td><a ><img  data-multiple="0" data-input="value-{{ $variant_values->value_id }}"  id="thumb-value-image-{{ $variant_values->value_id }}" class="img-thumbnail"  width="100" height="auto" id="img-image"  src="{{ $https_catalog.$variant_values->image }}" alt="" title="" data-placeholder="Image" /></a> <input id="value-{{ $variant_values->value_id }}" type="hidden" name="variation_value[{{$variant_values->value_id}}][image][]" value="{{$variant_values->value_id}}" id="input-image" /></td>
+                                                                                     @endif
+                                                                                     <td><input class="form-control" type="text" name="variation_value[{{$variat->variation_id}}][sku][]" value="{{ $variant_values->sku }}" /> </td>
+                                                                                     <td><input class="form-control" type="text" name="variation_value[{{$variat->variation_id}}][quantity][]" value="{{ $variant_values->quantity }}" /> </td>
+                                                                                     <td><select class="form-control" name="variation_value[{{$variat->variation_id}}][subtract][]" ><option {{ ( $variant_values->subtract == 1) ? 'selected="selected"' : ''}}  value="1">YES</option><option {{ ( $variant_values->subtract == 0) ? 'selected="selected"' : ''}} value="0">NO</option></select></td>
+                                                                                     <td><select class="form-control" name="variation_value[{{$variat->variation_id}}][price_prefix][]" ><option  {{ ( $variant_values->price_prefix == '+') ? 'selected="selected"' : ''}} value="+">+</option><option {{ ( $variant_values->price_prefix == '-') ? 'selected="selected"' : ''}} value="-">-</option></select></td>
+                                                                                     <td><input class="form-control" type="text" name="variation_value[{{$variat->variation_id}}][price][]" value="{{  $variant_values->price }}" /> </td>
+                                                                                     <td><a><i class="fa fa-trash   "></i></a></td>
+                                                                                 </tr>
+                                                                             @endforeach
+                                                                             </tbody>
+
+                                                                         </table>
+                                                                     </div>
+                                                                 @endif
+                                                             </div>
+                                                             @endforeach;
                                                         @else
                                                         <label class="col-2 col-form-label" for="input-status">{{ 'Variations' }}</label>
                                                         <div class="col-8">
