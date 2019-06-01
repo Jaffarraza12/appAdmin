@@ -49,6 +49,9 @@ class ProductController extends Controller
     }
     public function store(Request $request){
 
+       /* print_r($request->category);
+        exit();*/
+
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:255',
             'seo_url' => 'required|max:100',
@@ -60,6 +63,7 @@ class ProductController extends Controller
             $product->short_description = $request->short_description;
             $product->description = $request->description;
             $product->image = $request->image;
+            $product->status = $request->status;
             $product->price = $request->price;
             $product->cost = $request->cost;
             $product->seo_url = $request->seo_url;
@@ -68,6 +72,7 @@ class ProductController extends Controller
             $product->meta_keyword = $request->meta_keyword;
             $product->save();
             Response::json(array('success' => true, 'last_insert_id' => $product->product_id), 200);
+
 
             if(!is_null($request->product_images)) {
                 $i=0;
@@ -87,6 +92,15 @@ class ProductController extends Controller
                     $categoryProduct->category_id = $category;
                     $categoryProduct->save();
                 }
+            }
+
+
+            if(!is_null($request->special_price) ) {
+                    $productSpecial = new ProductSpecial();
+                    $productSpecial->product_id = $product->product_id;
+                    $productSpecial->price = $product->price;
+                    $productSpecial->save();
+
             }
             //variation
             if(!is_null($request->variation)) {
@@ -127,11 +141,11 @@ class ProductController extends Controller
             }
             Session::flash('success', 'New Product Has Been Added to your list.');
             if($request->submit == 'continue'){
-                return redirect('category/'.$product->product_id);
+                return redirect('product/'.$product->product_id);
             } elseif($request->submit == 'listing') {
-                return redirect('category');
+                return redirect('product');
             } elseif($request->submit == 'new') {
-                return redirect('category/create');
+                return redirect('product/create');
             }
         } else{
 
@@ -196,10 +210,21 @@ class ProductController extends Controller
     }
     public function destroy($id)
     {
-        $category = Category::find($id);
-        $category->delete();
-        Session::flash('success', 'Category Has Been Remove.');
-        $json['redirect'] =  URL('/category');
+        $product = product::where('product_id',$id);
+        $product->delete();
+
+        $productImages = ProductImage::where('product_id',$id);
+        $productImages->delete();
+
+        $productCategory = CategoryProduct::where('product_id',$id);
+        $productCategory->delete();
+
+
+        $productVariation = ProductVariation::where('product_id',$id);
+        $productVariation->delete();
+
+        Session::flash('success', 'Product Has Been Remove.');
+        $json['redirect'] =  URL('/product');
         echo json_encode($json);
     }
     public function VariationOption(Request $request){
@@ -216,7 +241,7 @@ class ProductController extends Controller
             $html .= '<tbody>';
             foreach ($variationValues as $value) {
                 $html .= '<tr>';
-                $html .= '<td>' . $value->name . ' <input type="hidden" name="variation_value[' . $variation->variation_id . '][value_id][]" value="' . $value->value_id . '" />  <input type="hidden" name="variation_value[' . $variation->variation_id . '][name][]" value="' .$variation->name . '" /> </td>';
+                $html .= '<td>' . $value->name . ' <input type="hidden" name="variation_value[' . $variation->variation_id . '][value_id][]" value="' . $value->value_id . '" />  <input type="hidden" name="variation_value[' . $variation->variation_id . '][name][]" value="' .$value->name . '" /> </td>';
                 $html .= '<td><a ><img  data-multiple="0" data-input="value-'.$value->value_id.'"  id="thumb-value-image-'.$value->value_id.'" class="img-thumbnail"  width="100" height="auto" id="img-image"  src="' . $img_thumb . '" alt="" title="" data-placeholder="Image" /></a> <input id="value-'.$value->value_id.'" type="hidden" name="variation_value[' . $variation->variation_id . '][image][]" value="" id="input-image" /></td>';
                 $html .= '<td><input class="form-control" type="text" name="variation_value[' . $variation->variation_id . '][sku][]" value="" /> </td>';
                 $html .= '<td><input class="form-control" type="text" name="variation_value[' . $variation->variation_id . '][quantity][]" value="" /> </td>';

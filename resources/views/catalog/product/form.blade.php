@@ -156,18 +156,28 @@
                                             <div class="form-group row">
                                                 <label class="col-2 col-form-label ">Categories</label>
                                                 <div class="col-10">
+                                                    @if(old('category.0'))
                                                     <select name="category[]" class="form-control form-control--fixed kt-selectpicker" multiple data-max-options="5" >
                                                         @foreach($categories as $category)
-                                                            <option value="{{$category->category_id}}">{{$category->name}}</option>
+                                                            @php $Cselect = (in_array($category->category_id,old('category'))) ?  'selected="selected"' : '' ;  @endphp
+                                                            <option {{$Cselect}} value="{{$category->category_id}}">{{$category->name}}</option>
                                                         @endforeach
                                                     </select>
+                                                    @else
+                                                        <select name="category[]" class="form-control form-control--fixed kt-selectpicker" multiple data-max-options="5" >
+                                                            @foreach($categories as $category)
+                                                                <option value="{{$category->category_id}}">{{$category->name}}</option>
+                                                            @endforeach
+                                                        </select>
+
+                                                    @endif
 
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-2 control-label">{{ 'Image' }}</label>
-                                                <div class="col-10"><a ><img  data-multiple="0" data-input="input-image"  id="thumb-image" class="img-thumbnail"  width="100" height="auto" id="img-image"  src="{{ $img_thumb }}" alt="" title="" data-placeholder="{{ 'Image' }}" /></a>
-                                                    <input type="hidden" name="image" value="{{ (old('image') ) ? old('image') :  $product->image }}" id="input-image" />
+                                                <div class="col-10"><a ><img  data-multiple="0" data-input="input-image"  id="thumb-image" class="img-thumbnail"  width="100" height="auto" id="img-image"  src="{{ (old('image') ) ? $https_catalog.old('image') :  $img_thumb }}  " alt="" title="" data-placeholder="{{ 'Image' }}" /></a>
+                                                    <input type="hidden" name="image" value="{{ (old('image')) ? old('image') :  '' }}" id="input-image" />
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -270,9 +280,6 @@
                                                                         <option {{$selectV}} value="{{$variation->variation_id}}">{{$variation->name}}</option>
                                                                     @endforeach
                                                                 </select>
-
-                                                                {{$variation_name}}
-
                                                             </div>
                                                             <div class="col-2"><a><i data-elem="variation-html-{{$i}}" class="fa fa-trash"></i></a></div>
                                                             <div class="variation-option" id="variation-option-{{$i}}">
@@ -286,13 +293,17 @@
                                                                             <tbody>
                                                                             @for($j=0 ; $j < count(old('variation_value.'.old('variation.'.$i).'.value_id')) ; $j++ )
                                                                                 <tr>
-                                                                                    <td> <input type="hidden" name="variation_value[{{old('variation.'.$i)}}][value_id][]" value="{{ old('variation_value.'.old('variation.'.$i).'.value_id.'.$j) }}" /><input type="hidden" name="variation_value[{{old('variation.'.$i)}}][name][]" value="{{ old('variation_value.'.old('variation.'.$i).'.name.'.$j) }}" /></td>
-                                                                                    <td><a ><img  data-multiple="0" data-input="value-'.$value->value_id.'"  id="thumb-value-image-'.$value->value_id.'" class="img-thumbnail"  width="100" height="auto" id="img-image"  src="{{ $https_catalog.old('variation_value['.old('variation.'.$i).'][image].'.$i) }}" alt="" title="" data-placeholder="Image" /></a> <input id="value-'.$value->value_id.'" type="hidden" name="variation_value[' . $variation->variation_id . '][image][]" value="" id="input-image" /></td>
-                                                                                    <td><input class="form-control" type="text" name="variation_value[' . $variation->variation_id . '][sku][]" value="{{ old('variation_value['.old('variation.'.$i).'][sku].'.$j) }}" /> </td>
-                                                                                    <td><input class="form-control" type="text" name="variation_value[' . $variation->variation_id . '][quantity][]" value="{{ old('variation_value['.old('variation.'.$i).'][quantity].'.$j) }}" /> </td>
-                                                                                    <td><select class="form-control" name="variation_value[' . $variation->variation_id . '][subtract][]" ><option value="1">YES</option><option value="0">NO</option></select></td>
-                                                                                    <td><select class="form-control" name="variation_value[' . $variation->variation_id . '][price_prefix][]" ><option value="+">+</option><option value="-">-</option></select></td>
-                                                                                    <td><input class="form-control" type="text" name="variation_value[' . $variation->variation_id . '][price][]" value="{{ old('variation_value['.old('variation.'.$i).'][price].'.$j) }}" /> </td>
+                                                                                    <td>{{ old('variation_value.'.old('variation.'.$i).'.name.'.$j) }} <input type="hidden" name="variation_value[{{old('variation.'.$i)}}][value_id][]" value="{{ old('variation_value.'.old('variation.'.$i).'.value_id.'.$j) }}" /><input type="hidden" name="variation_value[{{old('variation.'.$i)}}][name][]" value="{{ old('variation_value.'.old('variation.'.$i).'.name.'.$j) }}" /></td>
+                                                                                    @if(is_null(old('variation_value.'.old('variation.'.$i).'.image.'.$j)))
+                                                                                        <td><a ><img  data-multiple="0" data-input="value-{{ old('variation_value.'.old('variation.'.$i).'.value_id.'.$j) }}"  id="thumb-value-image-{{ old('variation_value.'.old('variation.'.$i).'.value_id.'.$j) }}" class="img-thumbnail"  width="100" height="auto" id="img-image"  src="{{ $img_thumb }}" alt="" title="" data-placeholder="Image" /></a> <input id="value-{{ old('variation_value.'.old('variation.'.$i).'.value_id.'.$j) }}" type="hidden" name="variation_value[{{old('variation.'.$i)}}][image][]" value="" id="input-image" /></td>
+                                                                                    @else
+                                                                                        <td><a ><img  data-multiple="0" data-input="value-{{ old('variation_value.'.old('variation.'.$i).'.value_id.'.$j) }}"  id="thumb-value-image-{{ old('variation_value.'.old('variation.'.$i).'.value_id.'.$j) }}" class="img-thumbnail"  width="100" height="auto" id="img-image"  src="{{ $https_catalog.old('variation_value.'.old('variation.'.$i).'.image.'.$j) }}" alt="" title="" data-placeholder="Image" /></a> <input id="value-{{ old('variation_value.'.old('variation.'.$i).'.value_id.'.$j) }}" type="hidden" name="variation_value[{{old('variation.'.$i)}}][image][]" value="{{ old('variation_value.'.old('variation.'.$i).'.image.'.$j) }}" id="input-image" /></td>
+                                                                                    @endif
+                                                                                    <td><input class="form-control" type="text" name="variation_value[{{old('variation.'.$i)}}][sku][]" value="{{ old('variation_value.'.old('variation.'.$i).'.sku.'.$j) }}" /> </td>
+                                                                                    <td><input class="form-control" type="text" name="variation_value[{{old('variation.'.$i)}}][quantity][]" value="{{ old('variation_value.'.old('variation.'.$i).'.quantity.'.$j) }}" /> </td>
+                                                                                    <td><select class="form-control" name="variation_value[{{old('variation.'.$i)}}][subtract][]" ><option {{ ( old('variation_value.'.old('variation.'.$i).'.subtract.'.$j) == 1) ? 'selected="selected"' : ''}}  value="1">YES</option><option {{ ( old('variation_value.'.old('variation.'.$i).'.subtract.'.$j) == 0) ? 'selected="selected"' : ''}} value="0">NO</option></select></td>
+                                                                                    <td><select class="form-control" name="variation_value[{{old('variation.'.$i)}}][price_prefix][]" ><option  {{ ( old('variation_value.'.old('variation.'.$i).'.price_prefix.'.$j) == '+') ? 'selected="selected"' : ''}} value="+">+</option><option {{ ( old('variation_value.'.old('variation.'.$i).'.price_prefix.'.$j) == '-') ? 'selected="selected"' : ''}} value="-">-</option></select></td>
+                                                                                    <td><input class="form-control" type="text" name="variation_value[{{old('variation.'.$i)}}][price][]" value="{{ old('variation_value.'.old('variation.'.$i).'.price.'.$j) }}" /> </td>
                                                                                     <td><a><i class="fa fa-trash"></i></a></td>
                                                                                     </tr>
                                                                             @endfor
@@ -337,8 +348,7 @@
                                             <div class="form-group row">
                                                 <label class="col-2 col-form-label " for="input_special_price">{{ ' Special Price' }}</label>
                                                 <div class="col-3">
-                                                    <input type="number" class="form-control"  name="special_price" value="{{ $product->price}}" id="input-special-price" />
-
+                                                    <input type="number" class="form-control"  name="special_price" value="{{ (old('special_price') ? old('special_price') : $product->special_price )}}" id="input-special-price" />
                                                 </div>
                                             </div>
                                          </div>
@@ -351,7 +361,7 @@
                                             <div class="form-group row">
                                                 <label class="col-2 col-form-label " for="input-column">{{'Seo Url'}}</label>
                                                 <div class="col-10">
-                                                    <input type="text" name="seo_url" value="{{ $product->seo_url }}" placeholder="{{'Seo Url'}}" id="input-column" class="form-control" />
+                                                    <input type="text" name="seo_url" value="{{ (old('seo_url') ? old('seo_url') : $product->seo_url )}}" placeholder="{{'Seo Url'}}" id="input-column" class="form-control" />
                                                     @if($errors->mess->first('seo_url'))
                                                         <div class="text-danger">{{ $errors->mess->first('seo_url') }}</div>
                                                     @endif
@@ -361,20 +371,20 @@
                                             <div class="form-group required row">
                                                 <label class="col-2 col-form-label" for="input-meta-title">{{ 'Meta Title' }}</label>
                                                 <div class="col-10">
-                                                    <input type="text" name="meta_title" value="{{ $product->meta_title }}" placeholder="{{ 'Meta Title' }}" id="input-meta-title" class="form-control" />
+                                                    <input type="text" name="meta_title" value="{{ (old('meta_title') ? old('meta_title') : $product->meta_title )}}" placeholder="{{ 'Meta Title' }}" id="input-meta-title" class="form-control" />
                                                     <div class="text-danger">{{ '' }}</div>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-2 col-form-label" for="input-meta-description">{{ 'Meta Description' }}</label>
                                                 <div class="col-10">
-                                                    <textarea name="meta_description" rows="5" placeholder="{{ 'Meta Description' }}" id="input-meta-description" class="form-control">{{ $product->meta_description }}</textarea>
+                                                    <textarea name="meta_description" rows="5" placeholder="{{ 'Meta Description' }}" id="input-meta-description" class="form-control">{{ (old('meta_description') ? old('meta_description') : $product->meta_description )}}</textarea>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label class="col-2 col-form-label" for="input-meta-keyword">{{ 'Meta Keyword' }}</label>
                                                 <div class="col-10">
-                                                    <textarea name="meta_keyword" rows="5" placeholder="{{ 'Meta Keyword' }}" id="input-meta-keyword" class="form-control">{{ $product->meta_keyword }}</textarea>
+                                                    <textarea name="meta_keyword" rows="5" placeholder="{{ 'Meta Keyword' }}" id="input-meta-keyword" class="form-control">{{ (old('meta_keyword') ? old('meta_keyword') : $product->meta_keyword )}}</textarea>
                                                 </div>
                                             </div>
 
@@ -440,4 +450,8 @@
             var elem = $(this).data('input')
             var multiple = $(this).data('multiple')
             var show = $(this).attr('id')
-            $('.filemanager').attr('src','{{
+            $('.filemanager').attr('src','{{URL("file-manager")}}'+'?elem='+elem+'&show='+show+'&multiple='+multiple)
+            $('#jr_modal').modal('show')
+        });
+    </script>
+@endsection

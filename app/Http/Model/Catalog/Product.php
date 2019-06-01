@@ -11,6 +11,5 @@ class Product extends Model
 
     protected $table = 'product';
     protected $connection = 'mysql';
-
     protected $primaryKey = 'product_id';
 }
