@@ -248,7 +248,7 @@
                                                          @foreach($productImages as $image)
                                                              <tr>
                                                                  <td><a ><img data-multiple="1"  data-input="input-product-image-{{$image->product_image_id}}"  id="thumb-product-image-{{$image->product_image_id}}" class="img-thumbnail"  width="100" height="auto" id="img-image"  src="{{ $https_catalog.$image->image }}" alt="" title="" data-placeholder="{{ 'Image' }}" /></a>
-                                                                     <input id="input-product-image-{{$i}}" type="hidden" name="product_images[]" value="{{ $image->image }}"  /></td>
+                                                                     <input id="input-product-image-{{$image->product_image_id}}" type="hidden" name="product_images[]" value="{{ $image->image }}"  /></td>
                                                                  <td><br/><input type="number" class="form-control"  name="product_images_sort_order[]" value="{{  $image->sort_order }}"  /></td>
                                                              </tr>
                                                          @endforeach
@@ -356,7 +356,7 @@
                                                                              @foreach($productVariationValues[$variat->variation_id] as $variant_values)
                                                                                  <tr>
                                                                                      <td>{{ $variant_values->name}} <input type="hidden" name="variation_value[{{$variat->variation_id}}][value_id][]" value="{{ $variant_values->value_id }}" /><input type="hidden" name="variation_value[{{$variat->variation_id}}][name][]" value="{{ $variant_values->name }}" /></td>
-                                                                                     @if(empty($variant_values->image))
+                                                                                     @if(!empty($variant_values->image))
                                                                                          <td><a ><img  data-multiple="0" data-input="value-{{ $variant_values->value_id }}"  id="thumb-value-image-{{ $variant_values->value_id }}" class="img-thumbnail"  width="100" height="auto" id="img-image"  src="{{ $blank_thumb }}" alt="" title="" data-placeholder="Image" /></a> <input id="value-{{ $variant_values->value_id }}" type="hidden" name="variation_value[{{$variant_values->value_id}}][image][]" value="" id="input-image" /></td>
                                                                                      @else
                                                                                          <td><a ><img  data-multiple="0" data-input="value-{{ $variant_values->value_id }}"  id="thumb-value-image-{{ $variant_values->value_id }}" class="img-thumbnail"  width="100" height="auto" id="img-image"  src="{{ $https_catalog.$variant_values->image }}" alt="" title="" data-placeholder="Image" /></a> <input id="value-{{ $variant_values->value_id }}" type="hidden" name="variation_value[{{$variant_values->value_id}}][image][]" value="{{$variant_values->value_id}}" id="input-image" /></td>

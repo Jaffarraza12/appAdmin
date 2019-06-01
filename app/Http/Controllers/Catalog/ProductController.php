@@ -48,10 +48,6 @@ class ProductController extends Controller
         return view('catalog.product.form',compact('product','heading','https_catalog','categories','actionUrl','variations','img_thumb','size_chart_thumb'));
     }
     public function store(Request $request){
-
-       /* print_r($request->category);
-        exit();*/
-
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:255',
             'seo_url' => 'required|max:100',
@@ -189,37 +185,110 @@ class ProductController extends Controller
     public function update(Request $request){
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:255',
-            'heading' => 'required',
             'seo_url' => 'required|max:100',
         ]);
+
         if (!$validator->fails()) {
-            $category = Category::find($request->category_id);
-            $category->name = $request->name;
-            $category->description = $request->description;
-            $category->heading = $request->heading;
-            $category->parent_id = $request->parent;
-            $category->image = $request->image;
-            $category->size_chart = $request->size_chart;
-            $category->top = $request->top;
-            $category->column = $request->column;
-            $category->sort_order = $request->sort_order;
-            $category->status = $request->status;
-            $category->seo_url = $request->seo_url;
-            $category->meta_description = $request->meta_description;
-            $category->meta_title = $request->meta_title;
-            $category->meta_keyword = $request->meta_keyword;
-            $category->save();
-            Session::flash('success', 'Category Has Been Saved.');
+            $product = Product::find($request->product_id);
+            $product->name = $request->name;
+            $product->product_id = $request->product_id;
+            $product->short_description = $request->short_description;
+            $product->description = $request->description;
+            $product->image = $request->image;
+            $product->status = $request->status;
+            $product->price = $request->price;
+            $product->cost = $request->cost;
+            $product->seo_url = $request->seo_url;
+            $product->meta_title = $request->meta_title;
+            $product->meta_description = $request->meta_description;
+            $product->meta_keyword = $request->meta_keyword;
+            $product->save();
+
+
+            if(!is_null($request->product_images)) {
+                ProductImage::where('product_id',$request->product_id)->delete();
+                $i=0;
+                foreach ($request->product_images as $image) {
+                    $productImage = new ProductImage;
+                    $productImage->product_id = $product->product_id;
+                    $productImage->image = $image;
+                    $productImage->sort_order = $request->product_images_sort_order[$i];//worki
+                    $productImage->save();
+                    ++$i;
+                }
+            }
+            if(!is_null($request->category) ) {
+                CategoryProduct::where('product_id',$request->product_id)->delete();
+                foreach ($request->category as $category) {
+                    $categoryProduct = new CategoryProduct;
+                    $categoryProduct->product_id = $product->product_id;
+                    $categoryProduct->category_id = $category;
+                    $categoryProduct->save();
+                }
+            }
+
+
+            if(!is_null($request->special_price) ) {
+                ProductSpecial::where('product_id',$request->product_id)->delete();
+
+                $productSpecial = new ProductSpecial();
+                $productSpecial->product_id = $product->product_id;
+                $productSpecial->price = $product->price;
+                $productSpecial->save();
+
+            }
+            //variation
+            if(!is_null($request->variation)) {
+                ProductVariation::where('product_id',$request->product_id)->delete();
+                ProductVariationValue::where('product_id',$request->product_id)->delete();
+
+                $a=0;
+                foreach ($request->variation as $variation) {
+                    $productVariation = new ProductVariation;
+                    $productVariation->product_id = $product->product_id;
+                    $productVariation->variation_id = $variation;
+                    $productVariation->required = $request->variation_required[0];
+                    $productVariation->save();
+                    Response::json(array('success' => true, 'last_insert_id' => $productVariation->product_variation_id), 200);
+                    //echo $product->product_id;
+                    //print_r($request->variation_value[$variation]['value_id']);
+                    //exit();
+                    if($request->variation_value[$variation]['value_id'][0]){
+                        $variationDB = Variation::where('variation_id',$variation)->first();
+                        if($variationDB->type == 'select') {
+                            $j = 0;
+                            foreach($request->variation_value[$variation]['value_id'] as $value_id){
+                                $productVariationValue = new ProductVariationValue;
+                                $productVariationValue->product_variation_id = $productVariation->product_variation_id;
+                                $productVariationValue->product_id = $product->product_id;
+                                $productVariationValue->variation_id = $variation;
+                                $productVariationValue->value_id = $value_id;
+                                $productVariationValue->sku = $request->variation_value[$variation]['sku'][$j];
+                                $productVariationValue->image = $request->variation_value[$variation]['image'][$j];
+                                $productVariationValue->quantity = $request->variation_value[$variation]['quantity'][$j];
+                                $productVariationValue->subtract = $request->variation_value[$variation]['subtract'][$j];
+                                $productVariationValue->price = $request->variation_value[$variation]['price'][$j];
+                                $productVariationValue->price_prefix = $request->variation_value[$variation]['price_prefix'][$j];
+                                $productVariationValue->save();
+                                ++$j;
+                            }
+                        }
+                    }
+                    ++$a;
+                }
+            }
+            Session::flash('success', 'Product Save.');
             if($request->submit == 'continue'){
-                return redirect('category/'.$category->category_id);
+                return redirect('product/'.$request->product_id);
             } elseif($request->submit == 'listing') {
-                return redirect('category');
+                return redirect('product');
             } elseif($request->submit == 'new') {
-                return redirect('category/create');
+                return redirect('product/create');
             }
         } else{
-            Session::flash('failed', 'Problem in adding Category.');
-            return redirect('category/'.$request->category_id   )
+
+            Session::flash('failed', 'Problem in adding Product.');
+            return redirect('product/'.$request->product_id)
                 ->withErrors($validator, 'mess')
                 ->withInput();
         }
