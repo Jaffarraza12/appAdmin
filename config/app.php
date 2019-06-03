@@ -121,7 +121,7 @@ return [
 
     'key' => env('APP_KEY'),
 
-    'cipher' => 't3cThtBp/bynOcuI4oIB6laQ8w3gjjw8N4ybZbkqKZM=',
+    'cipher' => 'base64:t3cThtBp/bynOcuI4oIB6laQ8w3gjjw8N4ybZbkqKZM=',
 
     /*
     |--------------------------------------------------------------------------
