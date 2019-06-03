@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'appAdmin'),
+    'name' => env('APP_NAME', 'secure'),
 
     /*
     |--------------------------------------------------------------------------
@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -52,9 +52,9 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost/appAdmin/'),
+    'url' => env('APP_URL', 'http://carve.pk/secure/'),
 
-    'asset_url' => env('ASSET_URL', 'appAdmin/resources'),
+    'asset_url' => env('ASSET_URL', 'secure/resources'),
 
     /*
     |--------------------------------------------------------------------------
