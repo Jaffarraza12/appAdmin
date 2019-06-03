@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'secure'),
+    'name' => env('APP_NAME', 'appAdmin'),
 
     /*
     |--------------------------------------------------------------------------
@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', true),
+    'debug' => env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://carve.pk/secure/'),
+    'url' => env('APP_URL', 'http://carve.pk/secure'),
 
     'asset_url' => env('ASSET_URL', 'secure/resources'),
 
@@ -119,7 +119,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY','t3cThtBp/bynOcuI4oIB6laQ8w3gjjw8N4ybZbkqKZM='),
+    'key' => env('APP_KEY','base64:t3cThtBp/bynOcuI4oIB6laQ8w3gjjw8N4ybZbkqKZM='),
 
     'cipher' => 'AES-256-CBC',
 
