@@ -11,23 +11,15 @@
 |
 */
 
-Route::get('/','Common\DashboardController@index');
-
-Route::get('dashboard','Common\DashboardController@index');
-Route::get('test', function () {
-    return view('layout.test');
-});
-
-
-
-Route::resource('orders','Checkout\OrderController');
-Route::resource('category','Catalog\CategoryController');
-Route::resource('product','Catalog\ProductController');
-Route::post('product-variation','Catalog\ProductController@VariationOption');
-Route::get('file-manager','Common\FileManager@index');
-Route::post('file-manager','Common\FileManager@upload');
-Route::delete('file-manager-remove','Common\FileManager@delete');
-Route::post('file-manager-folder','Common\FileManager@folder');
+Route::get('/','Common\DashboardController@index')->middleware('auth');;
+Route::resource('orders','Checkout\OrderController')->middleware('auth');;
+Route::resource('category','Catalog\CategoryController')->middleware('auth');
+Route::resource('product','Catalog\ProductController')->middleware('auth');
+Route::post('product-variation','Catalog\ProductController@VariationOption')->middleware('auth');
+Route::get('file-manager','Common\FileManager@index')->middleware('auth');
+Route::post('file-manager','Commo   n\FileManager@upload')->middleware('auth');
+Route::delete('file-manager-remove','Common\FileManager@delete')->middleware('auth');
+Route::post('file-manager-folder','Common\FileManager@folder')->middleware('auth');
 
 
 
