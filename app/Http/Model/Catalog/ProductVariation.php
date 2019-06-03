@@ -11,4 +11,6 @@ class ProductVariation extends Model
     protected $connection = 'mysql';
     public $timestamps = false;
 
+    protected $primaryKey = 'product_variation_id';
+
 }

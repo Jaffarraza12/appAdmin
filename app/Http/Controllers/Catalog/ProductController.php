@@ -92,10 +92,10 @@ class ProductController extends Controller
 
 
             if(!is_null($request->special_price) ) {
-                    $productSpecial = new ProductSpecial();
-                    $productSpecial->product_id = $product->product_id;
-                    $productSpecial->price = $product->price;
-                    $productSpecial->save();
+                $productSpecial = new ProductSpecial();
+                $productSpecial->product_id = $product->product_id;
+                $productSpecial->price = $request->special_price;
+                $productSpecial->save();
 
             }
             //variation
@@ -127,6 +127,7 @@ class ProductController extends Controller
                                 $productVariationValue->subtract = $request->variation_value[$variation]['subtract'][$j];
                                 $productVariationValue->price = $request->variation_value[$variation]['price'][$j];
                                 $productVariationValue->price_prefix = $request->variation_value[$variation]['price_prefix'][$j];
+                                $productVariationValue->name = $request->variation_value[$variation]['name'][$j];
                                 $productVariationValue->save();
                                 ++$j;
                             }
@@ -156,6 +157,7 @@ class ProductController extends Controller
         $categories =  Category::orderBy('category_id', 'desc')->get();
         $actionUrl = URL('product/'.$id);
         $product = Product::where('product_id',$id)->first();
+        $productSpecial = ProductSpecial::where('product_id',$id)->first();
         $productCategories = array();
             foreach(CategoryProduct::where('product_id',$id)->get() as $pc){
                 $productCategories[] = $pc->category_id;
@@ -179,7 +181,7 @@ class ProductController extends Controller
 
         $variations = Variation::get();
 
-        return view('catalog.product.form',compact('product','blank_thumb','https_catalog','productCategories','productVariations','productVariationValues','productImages','variations','heading','categories','actionUrl','id','method','img_thumb'));
+        return view('catalog.product.form',compact('product','productSpecial','blank_thumb','https_catalog','productCategories','productVariations','productVariationValues','productImages','variations','heading','categories','actionUrl','id','method','img_thumb'));
 
     }
     public function update(Request $request){
@@ -230,29 +232,26 @@ class ProductController extends Controller
 
             if(!is_null($request->special_price) ) {
                 ProductSpecial::where('product_id',$request->product_id)->delete();
-
                 $productSpecial = new ProductSpecial();
                 $productSpecial->product_id = $product->product_id;
-                $productSpecial->price = $product->price;
+                $productSpecial->price = $request->special_price;
                 $productSpecial->save();
 
             }
             //variation
             if(!is_null($request->variation)) {
-                ProductVariation::where('product_id',$request->product_id)->delete();
-                ProductVariationValue::where('product_id',$request->product_id)->delete();
+              ProductVariation::where('product_id',$request->product_id)->delete();
+              ProductVariationValue::where('product_id',$request->product_id)->delete();
+
 
                 $a=0;
                 foreach ($request->variation as $variation) {
                     $productVariation = new ProductVariation;
                     $productVariation->product_id = $product->product_id;
                     $productVariation->variation_id = $variation;
-                    $productVariation->required = $request->variation_required[0];
+                    $productVariation->required = $request->variation_required[$a];
                     $productVariation->save();
                     Response::json(array('success' => true, 'last_insert_id' => $productVariation->product_variation_id), 200);
-                    //echo $product->product_id;
-                    //print_r($request->variation_value[$variation]['value_id']);
-                    //exit();
                     if($request->variation_value[$variation]['value_id'][0]){
                         $variationDB = Variation::where('variation_id',$variation)->first();
                         if($variationDB->type == 'select') {
@@ -269,6 +268,7 @@ class ProductController extends Controller
                                 $productVariationValue->subtract = $request->variation_value[$variation]['subtract'][$j];
                                 $productVariationValue->price = $request->variation_value[$variation]['price'][$j];
                                 $productVariationValue->price_prefix = $request->variation_value[$variation]['price_prefix'][$j];
+                                $productVariationValue->name = $request->variation_value[$variation]['name'][$j];
                                 $productVariationValue->save();
                                 ++$j;
                             }

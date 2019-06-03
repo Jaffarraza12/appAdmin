@@ -184,7 +184,7 @@
                                             <div class="form-group row">
                                                 <label class="col-2 control-label">{{ 'Image' }}</label>
                                                 <div class="col-10"><a ><img  data-multiple="0" data-input="input-image"  id="thumb-image" class="img-thumbnail"  width="100" height="auto" id="img-image"  src="{{ (old('image') ) ? $https_catalog.old('image') :  $img_thumb }}  " alt="" title="" data-placeholder="{{ 'Image' }}" /></a>
-                                                    <input type="hidden" name="image" value="{{ (old('image')) ? old('image') :  '' }}" id="input-image" />
+                                                    <input type="hidden" name="image" value="{{ (old('image')) ? old('image') :   $product->image }}" id="input-image" />
                                                 </div>
                                             </div>
                                             <div class="form-group row">
@@ -296,7 +296,7 @@
                                                             <div class="col-2"><a><i data-elem="variation-html-{{$i}}" class="fa fa-trash"></i></a></div>
                                                             <div class="variation-option" id="variation-option-{{$i}}">
 
-                                                                @if(!is_null(old('variation_value.'.old('variation.'.$i).'.value_id.0') ) )
+                                                         @if(!is_null(old('variation_value.'.old('variation.'.$i).'.value_id.0') ) )
                                                                     <div class="form-group row table-responsive">
                                                                         <h3 class="col-12 text-center" >{{$variation_name}}</h3>
                                                                         <div class="pull-right" style="width:10%;"><label>Required</label> <select class="form-control" name="variation_required[]"><option value="1">YES</option><option value="0">NO</option></select></div>
@@ -356,10 +356,10 @@
                                                                              @foreach($productVariationValues[$variat->variation_id] as $variant_values)
                                                                                  <tr>
                                                                                      <td>{{ $variant_values->name}} <input type="hidden" name="variation_value[{{$variat->variation_id}}][value_id][]" value="{{ $variant_values->value_id }}" /><input type="hidden" name="variation_value[{{$variat->variation_id}}][name][]" value="{{ $variant_values->name }}" /></td>
-                                                                                     @if(!empty($variant_values->image))
-                                                                                         <td><a ><img  data-multiple="0" data-input="value-{{ $variant_values->value_id }}"  id="thumb-value-image-{{ $variant_values->value_id }}" class="img-thumbnail"  width="100" height="auto" id="img-image"  src="{{ $blank_thumb }}" alt="" title="" data-placeholder="Image" /></a> <input id="value-{{ $variant_values->value_id }}" type="hidden" name="variation_value[{{$variant_values->value_id}}][image][]" value="" id="input-image" /></td>
+                                                                                     @if(empty($variant_values->image))
+                                                                                         <td><a ><img  data-multiple="0" data-input="value-{{ $variant_values->value_id }}"  id="thumb-value-image-{{ $variant_values->value_id }}" class="img-thumbnail"  width="100" height="auto" id="img-image"  src="{{ $blank_thumb }}" alt="" title="" data-placeholder="Image" /></a> <input id="value-{{ $variant_values->value_id }}" type="hidden" name="variation_value[{{$variat->variation_id}}][image][]" value="" id="input-image" /></td>
                                                                                      @else
-                                                                                         <td><a ><img  data-multiple="0" data-input="value-{{ $variant_values->value_id }}"  id="thumb-value-image-{{ $variant_values->value_id }}" class="img-thumbnail"  width="100" height="auto" id="img-image"  src="{{ $https_catalog.$variant_values->image }}" alt="" title="" data-placeholder="Image" /></a> <input id="value-{{ $variant_values->value_id }}" type="hidden" name="variation_value[{{$variant_values->value_id}}][image][]" value="{{$variant_values->value_id}}" id="input-image" /></td>
+                                                                                         <td><a ><img  data-multiple="0" data-input="value-{{ $variant_values->value_id }}"  id="thumb-value-image-{{ $variant_values->value_id }}" class="img-thumbnail"  width="100" height="auto" id="img-image"  src="{{ $https_catalog.$variant_values->image }}" alt="" title="" data-placeholder="Image" /></a> <input id="value-{{ $variant_values->value_id }}" type="hidden" name="variation_value[{{$variat->variation_id}}][image][]" value="{{$variant_values->image}}" id="input-image" /></td>
                                                                                      @endif
                                                                                      <td><input class="form-control" type="text" name="variation_value[{{$variat->variation_id}}][sku][]" value="{{ $variant_values->sku }}" /> </td>
                                                                                      <td><input class="form-control" type="text" name="variation_value[{{$variat->variation_id}}][quantity][]" value="{{ $variant_values->quantity }}" /> </td>
@@ -410,7 +410,11 @@
                                             <div class="form-group row">
                                                 <label class="col-2 col-form-label " for="input_special_price">{{ ' Special Price' }}</label>
                                                 <div class="col-3">
-                                                    <input type="number" class="form-control"  name="special_price" value="{{ (old('special_price') ? old('special_price') : $product->special_price )}}" id="input-special-price" />
+                                                    @if(empty($productSpecial->price))
+                                                        <input type="number" class="form-control"  name="special_price" value="{{ (old('special_price') ? old('special_price') : '')}}" id="input-special-price" />
+                                                    @else
+                                                        <input type="number" class="form-control"  name="special_price" value="{{ $productSpecial->price  }}" id="input-special-price" />
+                                                    @endif
                                                 </div>
                                             </div>
                                          </div>
