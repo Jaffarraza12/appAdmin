@@ -181,7 +181,7 @@ class ProductController extends Controller
 
         $variations = Variation::get();
 
-        return view('catalog.product.form',compact('product','productSpecial','blank_thumb','https_catalog','productCategories','productVariations','productVariationValues','productImages','variations','heading','categories','actionUrl','id','method','img_thumb'));
+        return view('catalog.product.form',compact('product','productSpecial','blank_thumb','https_catalog','productCategories','productVariations','productVariationValues','productImages','variations','heading','categories','actionUrl','id','img_thumb'));
 
     }
     public function update(Request $request){
