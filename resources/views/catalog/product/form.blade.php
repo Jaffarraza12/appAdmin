@@ -201,6 +201,13 @@
 
                                                 </div>
                                             </div>
+                                            <div class="form-group row">
+                                                <label class="col-2 col-form-label"  for="input-quantity">{{ 'Quantity' }}</label>
+                                                <div class="col-3">
+                                                    <input type="number" class="form-control" name="quantity"  value="{{(old('quantity') ) ? old('quantity') :  $product->quantity}}" id="input-image" />
+
+                                                </div>
+                                            </div>
 
                                             <div class="form-group row">
                                                 <label class="col-2 col-form-label " for="input-status">{{ 'Status' }}</label>

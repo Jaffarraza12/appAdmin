@@ -62,6 +62,7 @@ class ProductController extends Controller
             $product->status = $request->status;
             $product->price = $request->price;
             $product->cost = $request->cost;
+            $product->quantity = $request->quantity;
             $product->seo_url = $request->seo_url;
             $product->meta_title = $request->meta_title;
             $product->meta_description = $request->meta_description;
@@ -199,6 +200,7 @@ class ProductController extends Controller
             $product->image = $request->image;
             $product->status = $request->status;
             $product->price = $request->price;
+            $product->quantity = $request->quantity;
             $product->cost = $request->cost;
             $product->seo_url = $request->seo_url;
             $product->meta_title = $request->meta_title;
