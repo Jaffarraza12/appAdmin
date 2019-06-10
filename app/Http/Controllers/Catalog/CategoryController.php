@@ -90,7 +90,7 @@ class CategoryController extends Controller
         } else {
             $size_chart_thumb = asset('assets/images.png');
         }
-        return view('catalog.category.form',compact('category','heading','categories','actionUrl','id','method','img_thumb','size_chart_thumb'));
+        return view('catalog.category.form',compact('category','heading','categories','actionUrl','id','img_thumb','size_chart_thumb'));
 
     }
     public function update(Request $request){

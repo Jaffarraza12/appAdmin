@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b66c46b2-9f62-4e13-a6b9-be484bda7679" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Catalog/ProductController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Catalog/ProductController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/catalog/product/form.blade.php" afterPath="$PROJECT_DIR$/resources/views/catalog/product/form.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Catalog/CategoryController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Catalog/CategoryController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -38,7 +37,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProductController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Catalog/ProductController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="401">
@@ -64,11 +63,29 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="CategoryController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Catalog/CategoryController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="563">
+              <caret line="92" column="102" lean-forward="false" selection-start-line="92" selection-start-column="102" selection-end-line="92" selection-end-column="102" />
+              <folding>
+                <element signature="e#48#83#0#PHP" expanded="true" />
+                <element signature="e#448#634#0#PHP" expanded="false" />
+                <element signature="e#639#861#0#PHP" expanded="false" />
+                <element signature="e#866#1326#0#PHP" expanded="false" />
+                <element signature="e#1331#3177#0#PHP" expanded="false" />
+                <element signature="e#3955#5725#0#PHP" expanded="false" />
+                <element signature="e#5730#5984#0#PHP" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="form.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/catalog/product/form.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="206" column="178" lean-forward="false" selection-start-line="206" selection-start-column="178" selection-end-line="206" selection-end-column="178" />
+            <state relative-caret-position="696">
+              <caret line="220" column="57" lean-forward="true" selection-start-line="220" selection-start-column="57" selection-end-line="220" selection-end-column="57" />
               <folding>
                 <marker date="1560167562516" expanded="true" signature="15255:15464" ph="{...}" />
                 <marker date="1560167562516" expanded="true" signature="15314:15463" ph="..." />
@@ -183,7 +200,6 @@
         <option value="$PROJECT_DIR$/app/Http/Model/Catalog/CategoryProduct.php" />
         <option value="$PROJECT_DIR$/app/Http/Model/Catalog/ProductVariationValue.php" />
         <option value="$PROJECT_DIR$/resources/views/common/fileManager.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Catalog/CategoryController.php" />
         <option value="$PROJECT_DIR$/app/Http/Model/Catalog/Product.php" />
         <option value="$PROJECT_DIR$/resources/views/catalog/product/list.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Model/Catalog/ProductVariation.php" />
@@ -198,6 +214,7 @@
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/resources/views/catalog/product/form.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Catalog/ProductController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Catalog/CategoryController.php" />
       </list>
     </option>
   </component>
@@ -519,12 +536,12 @@
       <workItem from="1559129458366" duration="5435000" />
       <workItem from="1559376974401" duration="15603000" />
       <workItem from="1559549755002" duration="16502000" />
-      <workItem from="1560160525727" duration="4396000" />
+      <workItem from="1560160525727" duration="4764000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175522000" />
+    <option name="totallyTimeSpent" value="175890000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1542" height="916" extended-state="6" />
@@ -776,20 +793,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Catalog/CategoryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-          <folding>
-            <element signature="e#48#83#0#PHP" expanded="true" />
-            <element signature="e#448#634#0#PHP" expanded="false" />
-            <element signature="e#1331#3177#0#PHP" expanded="false" />
-            <element signature="e#3964#5734#0#PHP" expanded="false" />
-            <element signature="e#5739#5993#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../carve/app/Http/Controllers/Checkout/CheckoutController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
@@ -990,8 +993,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/catalog/product/form.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="206" column="178" lean-forward="false" selection-start-line="206" selection-start-column="178" selection-end-line="206" selection-end-column="178" />
+        <state relative-caret-position="696">
+          <caret line="220" column="57" lean-forward="true" selection-start-line="220" selection-start-column="57" selection-end-line="220" selection-end-column="57" />
           <folding>
             <marker date="1560167562516" expanded="true" signature="15255:15464" ph="{...}" />
             <marker date="1560167562516" expanded="true" signature="15314:15463" ph="..." />
@@ -1029,6 +1032,22 @@
             <marker date="1560167589287" expanded="true" signature="17587:17759" ph="..." />
             <marker date="1560167589287" expanded="true" signature="17685:17687" ph="..." />
             <marker date="1560167589287" expanded="true" signature="17685:17754" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Catalog/CategoryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="563">
+          <caret line="92" column="102" lean-forward="false" selection-start-line="92" selection-start-column="102" selection-end-line="92" selection-end-column="102" />
+          <folding>
+            <element signature="e#48#83#0#PHP" expanded="true" />
+            <element signature="e#448#634#0#PHP" expanded="false" />
+            <element signature="e#639#861#0#PHP" expanded="false" />
+            <element signature="e#866#1326#0#PHP" expanded="false" />
+            <element signature="e#1331#3177#0#PHP" expanded="false" />
+            <element signature="e#3955#5725#0#PHP" expanded="false" />
+            <element signature="e#5730#5984#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
