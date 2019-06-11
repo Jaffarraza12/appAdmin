@@ -15,7 +15,7 @@ class FileManager extends Controller
     {
         $this->HTTPS_CATALOG = 'http://carve.pk/demo/resources/catalog';
         $this->DIR_IMAGE = 'C:\xampp\htdocs\carve\resources\catalog';
-        echo ___DIR__;
+        echo dirname('/');
     }
 
     public function index( Request $request) {
