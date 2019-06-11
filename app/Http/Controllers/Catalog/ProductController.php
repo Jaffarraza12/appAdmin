@@ -39,13 +39,14 @@ class ProductController extends Controller
     public function create(){
         $heading = 'Add New Product';
         $categories =  Category::orderBy('category_id', 'desc')->get();
+        $productCategories = array();
         $actionUrl = URL('product');
         $product = new product;
         $https_catalog = $this->HTTPS_CATALOG;
         $variations = Variation::get();
         $img_thumb = asset('assets/images.png');
         $size_chart_thumb = asset('assets/images.png');
-        return view('catalog.product.form',compact('product','heading','https_catalog','categories','actionUrl','variations','img_thumb','size_chart_thumb'));
+        return view('catalog.product.form',compact('product','productCategories','heading','https_catalog','categories','actionUrl','variations','img_thumb','size_chart_thumb'));
     }
     public function store(Request $request){
         $validator = Validator::make($request->all(), [

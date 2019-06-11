@@ -23,6 +23,7 @@ class CartController extends Controller
         $country_id = 162;
         if($cart_id){
         $cartDetail = Cart::where('key',$cart_id);
+       
 
         $zones = Zone::where('country_id',$country_id)->get();
             if($cartDetail->count()) {
@@ -30,7 +31,7 @@ class CartController extends Controller
                 if(empty( json_decode($cartDetail->cart, true) )){
                     $cart_message = 'Your Cart is Empty';
                 } else {
-                $cart  = array();
+
                 $ct = new Cart();
                 $cart = $ct->detail($cartDetail);
                 }
