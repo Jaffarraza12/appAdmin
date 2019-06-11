@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b66c46b2-9f62-4e13-a6b9-be484bda7679" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Catalog/ProductController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Catalog/ProductController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Checkout/CartController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Checkout/CartController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,24 +40,24 @@
       <file leaf-file-name="ProductController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Catalog/ProductController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="48" column="80" lean-forward="false" selection-start-line="48" selection-start-column="80" selection-end-line="48" selection-end-column="80" />
+            <state relative-caret-position="480">
+              <caret line="49" column="61" lean-forward="false" selection-start-line="49" selection-start-column="61" selection-end-line="49" selection-end-column="61" />
               <folding>
                 <element signature="e#48#91#0#PHP" expanded="true" />
                 <element signature="e#755#942#0#PHP" expanded="false" />
                 <element signature="e#947#1220#0#PHP" expanded="false" />
-                <element signature="e#1849#7406#0#PHP" expanded="false" />
-                <element signature="e#7411#9152#0#PHP" expanded="false" />
-                <element signature="e#9157#14949#0#PHP" expanded="false" />
-                <element signature="e#14954#15533#0#PHP" expanded="false" />
-                <element signature="e#15538#18451#0#PHP" expanded="false" />
-                <marker date="1560249277183" expanded="true" signature="15928:18367" ph="..." />
-                <marker date="1560249277183" expanded="true" signature="16057:16067" ph="..." />
-                <marker date="1560249277183" expanded="true" signature="16235:18347" ph="..." />
-                <marker date="1560249277183" expanded="true" signature="16235:18367" ph="..." />
-                <marker date="1560249277183" expanded="true" signature="17645:17817" ph="..." />
-                <marker date="1560249277183" expanded="true" signature="17743:17745" ph="..." />
-                <marker date="1560249277183" expanded="true" signature="17743:17812" ph="..." />
+                <element signature="e#1900#7457#0#PHP" expanded="false" />
+                <element signature="e#7462#9203#0#PHP" expanded="false" />
+                <element signature="e#9208#15000#0#PHP" expanded="false" />
+                <element signature="e#15005#15584#0#PHP" expanded="false" />
+                <element signature="e#15589#18502#0#PHP" expanded="false" />
+                <marker date="1560249372754" expanded="true" signature="15979:18418" ph="..." />
+                <marker date="1560249372754" expanded="true" signature="16108:16118" ph="..." />
+                <marker date="1560249372754" expanded="true" signature="16286:18398" ph="..." />
+                <marker date="1560249372754" expanded="true" signature="16286:18418" ph="..." />
+                <marker date="1560249372754" expanded="true" signature="17696:17868" ph="..." />
+                <marker date="1560249372754" expanded="true" signature="17794:17796" ph="..." />
+                <marker date="1560249372754" expanded="true" signature="17794:17863" ph="..." />
               </folding>
             </state>
           </provider>
@@ -348,11 +346,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="catalog" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="product" />
+              <option name="myItemId" value="layout" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -375,60 +369,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="catalog" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="appAdmin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="appAdmin" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="appAdmin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="appAdmin" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="appAdmin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="appAdmin" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controllers" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -572,12 +512,12 @@
       <workItem from="1560160525727" duration="6202000" />
       <workItem from="1560239425126" duration="73000" />
       <workItem from="1560246866410" duration="1650000" />
-      <workItem from="1560249154793" duration="122000" />
+      <workItem from="1560249154793" duration="226000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="179173000" />
+    <option name="totallyTimeSpent" value="179277000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1542" height="916" extended-state="6" />
@@ -644,17 +584,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/Catalog/ProductController.php</url>
-          <line>317</line>
+          <line>318</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/Catalog/ProductController.php</url>
-          <line>156</line>
+          <line>157</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/app/Http/Controllers/Catalog/ProductController.php</url>
-          <line>50</line>
+          <line>51</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -1065,24 +1005,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Catalog/ProductController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="48" column="80" lean-forward="false" selection-start-line="48" selection-start-column="80" selection-end-line="48" selection-end-column="80" />
+        <state relative-caret-position="480">
+          <caret line="49" column="61" lean-forward="false" selection-start-line="49" selection-start-column="61" selection-end-line="49" selection-end-column="61" />
           <folding>
             <element signature="e#48#91#0#PHP" expanded="true" />
             <element signature="e#755#942#0#PHP" expanded="false" />
             <element signature="e#947#1220#0#PHP" expanded="false" />
-            <element signature="e#1849#7406#0#PHP" expanded="false" />
-            <element signature="e#7411#9152#0#PHP" expanded="false" />
-            <element signature="e#9157#14949#0#PHP" expanded="false" />
-            <element signature="e#14954#15533#0#PHP" expanded="false" />
-            <element signature="e#15538#18451#0#PHP" expanded="false" />
-            <marker date="1560249277183" expanded="true" signature="15928:18367" ph="..." />
-            <marker date="1560249277183" expanded="true" signature="16057:16067" ph="..." />
-            <marker date="1560249277183" expanded="true" signature="16235:18347" ph="..." />
-            <marker date="1560249277183" expanded="true" signature="16235:18367" ph="..." />
-            <marker date="1560249277183" expanded="true" signature="17645:17817" ph="..." />
-            <marker date="1560249277183" expanded="true" signature="17743:17745" ph="..." />
-            <marker date="1560249277183" expanded="true" signature="17743:17812" ph="..." />
+            <element signature="e#1900#7457#0#PHP" expanded="false" />
+            <element signature="e#7462#9203#0#PHP" expanded="false" />
+            <element signature="e#9208#15000#0#PHP" expanded="false" />
+            <element signature="e#15005#15584#0#PHP" expanded="false" />
+            <element signature="e#15589#18502#0#PHP" expanded="false" />
+            <marker date="1560249372754" expanded="true" signature="15979:18418" ph="..." />
+            <marker date="1560249372754" expanded="true" signature="16108:16118" ph="..." />
+            <marker date="1560249372754" expanded="true" signature="16286:18398" ph="..." />
+            <marker date="1560249372754" expanded="true" signature="16286:18418" ph="..." />
+            <marker date="1560249372754" expanded="true" signature="17696:17868" ph="..." />
+            <marker date="1560249372754" expanded="true" signature="17794:17796" ph="..." />
+            <marker date="1560249372754" expanded="true" signature="17794:17863" ph="..." />
           </folding>
         </state>
       </provider>
