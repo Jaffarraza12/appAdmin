@@ -13,9 +13,13 @@ class FileManager extends Controller
 
     public function __construct()
     {
-        $this->HTTPS_CATALOG = 'http://carve.pk/demo/resources/catalog';
-        $this->DIR_IMAGE = 'C:\xampp\htdocs\carve\resources\catalog';
-        echo dirname();
+        if($_SERVER['SERVER_NAME'] == 'localhost') {
+            $this->HTTPS_CATALOG = 'http://localhost/carve/resources/catalog';
+            $this->DIR_IMAGE = 'C:\xampp\htdocs\carve\resources\catalog';
+        } else {
+            $this->HTTPS_CATALOG = 'http://carve.pk/demo/resources/catalog';
+            $this->DIR_IMAGE = '/home/carve/public_html/demo/resources/catalog';
+        }
     }
 
     public function index( Request $request) {
