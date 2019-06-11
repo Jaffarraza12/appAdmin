@@ -67,12 +67,12 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Common/FileManager.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="126">
-              <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+              <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
               <folding>
-                <element signature="e#1654#2775#0#PHP" expanded="false" />
-                <element signature="e#2781#3774#0#PHP" expanded="false" />
-                <element signature="e#3780#5069#0#PHP" expanded="false" />
-                <element signature="e#5075#5387#0#PHP" expanded="false" />
+                <element signature="e#1651#2772#0#PHP" expanded="false" />
+                <element signature="e#2778#3771#0#PHP" expanded="false" />
+                <element signature="e#3777#5066#0#PHP" expanded="false" />
+                <element signature="e#5072#5384#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -531,15 +531,15 @@
       <workItem from="1560160525727" duration="6202000" />
       <workItem from="1560239425126" duration="73000" />
       <workItem from="1560246866410" duration="1650000" />
-      <workItem from="1560249154793" duration="1316000" />
+      <workItem from="1560249154793" duration="1577000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="180367000" />
+    <option name="totallyTimeSpent" value="180628000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1542" height="916" extended-state="6" />
+    <frame x="-8" y="-8" width="1542" height="916" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23918742" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1036,12 +1036,12 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Common/FileManager.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
-          <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+          <caret line="17" column="21" lean-forward="true" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
           <folding>
-            <element signature="e#1654#2775#0#PHP" expanded="false" />
-            <element signature="e#2781#3774#0#PHP" expanded="false" />
-            <element signature="e#3780#5069#0#PHP" expanded="false" />
-            <element signature="e#5075#5387#0#PHP" expanded="false" />
+            <element signature="e#1651#2772#0#PHP" expanded="false" />
+            <element signature="e#2778#3771#0#PHP" expanded="false" />
+            <element signature="e#3777#5066#0#PHP" expanded="false" />
+            <element signature="e#5072#5384#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
