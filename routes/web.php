@@ -17,7 +17,7 @@ Route::resource('category','Catalog\CategoryController')->middleware('auth');
 Route::resource('product','Catalog\ProductController')->middleware('auth');
 Route::post('product-variation','Catalog\ProductController@VariationOption')->middleware('auth');
 Route::get('file-manager','Common\FileManager@index')->middleware('auth');
-Route::post('file-manager','Commo   n\FileManager@upload')->middleware('auth');
+Route::post('file-manager','Common\FileManager@upload')->middleware('auth');
 Route::delete('file-manager-remove','Common\FileManager@delete')->middleware('auth');
 Route::post('file-manager-folder','Common\FileManager@folder')->middleware('auth');
 
