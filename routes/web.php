@@ -36,10 +36,10 @@ Route::post('file-manager-folder','Common\FileManager@folder')->middleware('auth
     public function edit($id){}
     public function update(Request $request){}
     public function destroy(Request $request){}*/
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('reset', [
+    'as' => 'password.reset',
+    'uses' => 'Auth\ForgotPasswordController@showLinkRequestForm'
+]);
