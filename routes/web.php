@@ -39,3 +39,7 @@ Route::post('file-manager-folder','Common\FileManager@folder')->middleware('auth
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
