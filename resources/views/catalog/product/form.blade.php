@@ -95,12 +95,8 @@
             <script src="{{asset('js/nicEdit.js')}}" type="text/javascript"></script>
             <script type="text/javascript">
                 bkLib.onDomLoaded(function() {
-                    new nicEditor().panelInstance('area1');
                     new nicEditor({fullPanel : true}).panelInstance('input-description');
-                    new nicEditor({iconsPath : '../nicEditorIcons.gif'}).panelInstance('area3');
-                    new nicEditor({buttonList : ['fontSize','bold','italic','underline','strikeThrough','subscript','superscript','html','image']}).panelInstance('area4');
-                    new nicEditor({maxHeight : 100}).panelInstance('area5');
-                });
+                  });
             </script>
 
             <div class="kt-content  kt-grid__item kt-grid__item--fluid" id="kt_content">
