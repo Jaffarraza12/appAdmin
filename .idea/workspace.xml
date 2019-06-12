@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b66c46b2-9f62-4e13-a6b9-be484bda7679" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/catalog/product/form.blade.php" afterPath="$PROJECT_DIR$/resources/views/catalog/product/form.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -41,6 +42,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="demo03.html" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Downloads/nicEdit-4ad98f51fafd99ef01e4eff35af7c570/demos/demo03.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-494">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="LoginController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -71,32 +82,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="form.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="form.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/catalog/product/form.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="316">
-              <caret line="97" column="65" lean-forward="false" selection-start-line="97" selection-start-column="65" selection-end-line="97" selection-end-column="65" />
+              <caret line="97" column="67" lean-forward="false" selection-start-line="97" selection-start-column="67" selection-end-line="97" selection-end-column="67" />
               <folding>
                 <element signature="e#1482#4718#0#HTML" expanded="false" />
                 <element signature="e#9881#16722#0#HTML" expanded="false" />
-                <marker date="1560332823141" expanded="true" signature="15562:15771" ph="{...}" />
-                <marker date="1560332823141" expanded="true" signature="15621:15770" ph="..." />
-                <marker date="1560332823141" expanded="true" signature="15778:15930" ph="..." />
-                <marker date="1560332823141" expanded="true" signature="21687:21745" ph="{...}" />
-                <marker date="1560332823141" expanded="true" signature="22641:22833" ph="..." />
-                <marker date="1560332823141" expanded="true" signature="22756:22833" ph="..." />
-                <marker date="1560332823141" expanded="true" signature="30718:30912" ph="..." />
-                <marker date="1560332823141" expanded="true" signature="44615:46307" ph="..." />
-                <marker date="1560332823141" expanded="true" signature="44626:46306" ph="..." />
-                <marker date="1560332823141" expanded="true" signature="44655:45661" ph="..." />
-                <marker date="1560332823141" expanded="true" signature="44693:45660" ph="..." />
-                <marker date="1560332823141" expanded="true" signature="45691:46294" ph="..." />
+                <marker date="1560333803228" expanded="true" signature="15562:15771" ph="{...}" />
+                <marker date="1560333803228" expanded="true" signature="15621:15770" ph="..." />
+                <marker date="1560333803228" expanded="true" signature="15778:15930" ph="..." />
+                <marker date="1560333803228" expanded="true" signature="21687:21745" ph="{...}" />
+                <marker date="1560333803228" expanded="true" signature="22641:22833" ph="..." />
+                <marker date="1560333803228" expanded="true" signature="22756:22833" ph="..." />
+                <marker date="1560333803228" expanded="true" signature="30718:30912" ph="..." />
+                <marker date="1560333803228" expanded="true" signature="44615:46307" ph="..." />
+                <marker date="1560333803228" expanded="true" signature="44626:46306" ph="..." />
+                <marker date="1560333803228" expanded="true" signature="44655:45661" ph="..." />
+                <marker date="1560333803228" expanded="true" signature="44693:45660" ph="..." />
+                <marker date="1560333803228" expanded="true" signature="45691:46294" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nicEdit.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="nicEdit.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/js/nicEdit.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="246">
@@ -127,21 +138,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="master.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layout/master.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="80" column="29" lean-forward="true" selection-start-line="80" selection-start-column="29" selection-end-line="81" selection-end-column="71" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>variation_box</find>
       <find>variation-value</find>
       <find>variation</find>
       <find>$request-&gt;variation</find>
@@ -171,6 +171,7 @@
       <find>body</find>
       <find>boots</find>
       <find>card-header</find>
+      <find>Icons</find>
     </findStrings>
     <replaceStrings>
       <replace>{{asset('/</replace>
@@ -237,8 +238,8 @@
         <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
-        <option value="$PROJECT_DIR$/resources/views/catalog/product/form.blade.php" />
         <option value="$PROJECT_DIR$/resources/js/nicEdit.js" />
+        <option value="$PROJECT_DIR$/resources/views/catalog/product/form.blade.php" />
       </list>
     </option>
   </component>
@@ -462,12 +463,12 @@
       <workItem from="1560239425126" duration="73000" />
       <workItem from="1560246866410" duration="1650000" />
       <workItem from="1560249154793" duration="2221000" />
-      <workItem from="1560326193235" duration="6844000" />
+      <workItem from="1560326193235" duration="7515000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="188116000" />
+    <option name="totallyTimeSpent" value="188787000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1542" height="916" extended-state="0" />
@@ -558,13 +559,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../multi-select/samples/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-170">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../multi-select/samples/Pre-selected-options.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
@@ -951,6 +945,26 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/nicEdit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="270" column="23" lean-forward="false" selection-start-line="270" selection-start-column="23" selection-end-line="270" selection-end-column="23" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1560333130398" expanded="true" signature="18086:18149" ph="..." />
+            <marker date="1560333130398" expanded="true" signature="48764:48790" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/nicEdit-4ad98f51fafd99ef01e4eff35af7c570/demos/demo03.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-494">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$USER_HOME$/Downloads/nicEdit-4ad98f51fafd99ef01e4eff35af7c570/demos/demo02.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="206">
@@ -962,34 +976,22 @@
     <entry file="file://$PROJECT_DIR$/resources/views/catalog/product/form.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="316">
-          <caret line="97" column="65" lean-forward="false" selection-start-line="97" selection-start-column="65" selection-end-line="97" selection-end-column="65" />
+          <caret line="97" column="67" lean-forward="false" selection-start-line="97" selection-start-column="67" selection-end-line="97" selection-end-column="67" />
           <folding>
             <element signature="e#1482#4718#0#HTML" expanded="false" />
             <element signature="e#9881#16722#0#HTML" expanded="false" />
-            <marker date="1560332823141" expanded="true" signature="15562:15771" ph="{...}" />
-            <marker date="1560332823141" expanded="true" signature="15621:15770" ph="..." />
-            <marker date="1560332823141" expanded="true" signature="15778:15930" ph="..." />
-            <marker date="1560332823141" expanded="true" signature="21687:21745" ph="{...}" />
-            <marker date="1560332823141" expanded="true" signature="22641:22833" ph="..." />
-            <marker date="1560332823141" expanded="true" signature="22756:22833" ph="..." />
-            <marker date="1560332823141" expanded="true" signature="30718:30912" ph="..." />
-            <marker date="1560332823141" expanded="true" signature="44615:46307" ph="..." />
-            <marker date="1560332823141" expanded="true" signature="44626:46306" ph="..." />
-            <marker date="1560332823141" expanded="true" signature="44655:45661" ph="..." />
-            <marker date="1560332823141" expanded="true" signature="44693:45660" ph="..." />
-            <marker date="1560332823141" expanded="true" signature="45691:46294" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/nicEdit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="270" column="23" lean-forward="false" selection-start-line="270" selection-start-column="23" selection-end-line="270" selection-end-column="23" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <marker date="1560333130398" expanded="true" signature="18086:18149" ph="..." />
-            <marker date="1560333130398" expanded="true" signature="48764:48790" ph="..." />
+            <marker date="1560333803228" expanded="true" signature="15562:15771" ph="{...}" />
+            <marker date="1560333803228" expanded="true" signature="15621:15770" ph="..." />
+            <marker date="1560333803228" expanded="true" signature="15778:15930" ph="..." />
+            <marker date="1560333803228" expanded="true" signature="21687:21745" ph="{...}" />
+            <marker date="1560333803228" expanded="true" signature="22641:22833" ph="..." />
+            <marker date="1560333803228" expanded="true" signature="22756:22833" ph="..." />
+            <marker date="1560333803228" expanded="true" signature="30718:30912" ph="..." />
+            <marker date="1560333803228" expanded="true" signature="44615:46307" ph="..." />
+            <marker date="1560333803228" expanded="true" signature="44626:46306" ph="..." />
+            <marker date="1560333803228" expanded="true" signature="44655:45661" ph="..." />
+            <marker date="1560333803228" expanded="true" signature="44693:45660" ph="..." />
+            <marker date="1560333803228" expanded="true" signature="45691:46294" ph="..." />
           </folding>
         </state>
       </provider>
