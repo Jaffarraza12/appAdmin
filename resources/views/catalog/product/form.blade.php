@@ -151,7 +151,7 @@
  <div class="form-group row">
                                                 <label class="col-2 col-form-label" for="input-description">{{ 'Description' }}</label>
                                                 <div class="col-10">
-                                                    <textarea name="description" placeholder="{{ 'Description' }}"    id="input-description" class="form-control">{{ (old('description') ) ? old('description') : $product->description }}</textarea>                                     </div>
+                                                    <textarea style="height:400px;" name="description" placeholder="{{ 'Description' }}"    id="input-description" class="form-control">{{ (old('description') ) ? old('description') : $product->description }}</textarea>                                     </div>
                                             </div>
 
 

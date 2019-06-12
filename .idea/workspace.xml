@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b66c46b2-9f62-4e13-a6b9-be484bda7679" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/catalog/product/form.blade.php" afterPath="$PROJECT_DIR$/resources/views/catalog/product/form.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -85,23 +84,24 @@
       <file leaf-file-name="form.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/catalog/product/form.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="97" column="67" lean-forward="false" selection-start-line="97" selection-start-column="67" selection-end-line="97" selection-end-column="67" />
+            <state relative-caret-position="236">
+              <caret line="153" column="82" lean-forward="false" selection-start-line="153" selection-start-column="82" selection-end-line="153" selection-end-column="82" />
               <folding>
                 <element signature="e#1482#4718#0#HTML" expanded="false" />
-                <element signature="e#9881#16722#0#HTML" expanded="false" />
-                <marker date="1560333803228" expanded="true" signature="15562:15771" ph="{...}" />
-                <marker date="1560333803228" expanded="true" signature="15621:15770" ph="..." />
-                <marker date="1560333803228" expanded="true" signature="15778:15930" ph="..." />
-                <marker date="1560333803228" expanded="true" signature="21687:21745" ph="{...}" />
-                <marker date="1560333803228" expanded="true" signature="22641:22833" ph="..." />
-                <marker date="1560333803228" expanded="true" signature="22756:22833" ph="..." />
-                <marker date="1560333803228" expanded="true" signature="30718:30912" ph="..." />
-                <marker date="1560333803228" expanded="true" signature="44615:46307" ph="..." />
-                <marker date="1560333803228" expanded="true" signature="44626:46306" ph="..." />
-                <marker date="1560333803228" expanded="true" signature="44655:45661" ph="..." />
-                <marker date="1560333803228" expanded="true" signature="44693:45660" ph="..." />
-                <marker date="1560333803228" expanded="true" signature="45691:46294" ph="..." />
+                <element signature="e#9439#9460#0#HTML" expanded="true" />
+                <element signature="e#9903#16744#0#HTML" expanded="false" />
+                <marker date="1560333891099" expanded="true" signature="15584:15793" ph="{...}" />
+                <marker date="1560333891099" expanded="true" signature="15643:15792" ph="..." />
+                <marker date="1560333891099" expanded="true" signature="15800:15952" ph="..." />
+                <marker date="1560333891099" expanded="true" signature="21709:21767" ph="{...}" />
+                <marker date="1560333891099" expanded="true" signature="22663:22855" ph="..." />
+                <marker date="1560333891099" expanded="true" signature="22778:22855" ph="..." />
+                <marker date="1560333891099" expanded="true" signature="30740:30934" ph="..." />
+                <marker date="1560333891099" expanded="true" signature="44637:46329" ph="..." />
+                <marker date="1560333891099" expanded="true" signature="44648:46328" ph="..." />
+                <marker date="1560333891099" expanded="true" signature="44677:45683" ph="..." />
+                <marker date="1560333891099" expanded="true" signature="44715:45682" ph="..." />
+                <marker date="1560333891099" expanded="true" signature="45713:46316" ph="..." />
               </folding>
             </state>
           </provider>
@@ -463,12 +463,12 @@
       <workItem from="1560239425126" duration="73000" />
       <workItem from="1560246866410" duration="1650000" />
       <workItem from="1560249154793" duration="2221000" />
-      <workItem from="1560326193235" duration="7515000" />
+      <workItem from="1560326193235" duration="7597000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="188787000" />
+    <option name="totallyTimeSpent" value="188869000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1542" height="916" extended-state="0" />
@@ -926,8 +926,7 @@
         <state relative-caret-position="180">
           <caret line="9" column="11" lean-forward="true" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="39" />
           <folding>
-            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -943,18 +942,6 @@
     <entry file="file://$PROJECT_DIR$/resources/js/nicEditorIcons.gif">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/nicEdit.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="270" column="23" lean-forward="false" selection-start-line="270" selection-start-column="23" selection-end-line="270" selection-end-column="23" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <marker date="1560333130398" expanded="true" signature="18086:18149" ph="..." />
-            <marker date="1560333130398" expanded="true" signature="48764:48790" ph="..." />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Downloads/nicEdit-4ad98f51fafd99ef01e4eff35af7c570/demos/demo03.html">
@@ -973,25 +960,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/nicEdit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="270" column="23" lean-forward="false" selection-start-line="270" selection-start-column="23" selection-end-line="270" selection-end-column="23" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1560333130398" expanded="true" signature="18086:18149" ph="..." />
+            <marker date="1560333130398" expanded="true" signature="48764:48790" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/catalog/product/form.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="97" column="67" lean-forward="false" selection-start-line="97" selection-start-column="67" selection-end-line="97" selection-end-column="67" />
+        <state relative-caret-position="236">
+          <caret line="153" column="82" lean-forward="false" selection-start-line="153" selection-start-column="82" selection-end-line="153" selection-end-column="82" />
           <folding>
             <element signature="e#1482#4718#0#HTML" expanded="false" />
-            <element signature="e#9881#16722#0#HTML" expanded="false" />
-            <marker date="1560333803228" expanded="true" signature="15562:15771" ph="{...}" />
-            <marker date="1560333803228" expanded="true" signature="15621:15770" ph="..." />
-            <marker date="1560333803228" expanded="true" signature="15778:15930" ph="..." />
-            <marker date="1560333803228" expanded="true" signature="21687:21745" ph="{...}" />
-            <marker date="1560333803228" expanded="true" signature="22641:22833" ph="..." />
-            <marker date="1560333803228" expanded="true" signature="22756:22833" ph="..." />
-            <marker date="1560333803228" expanded="true" signature="30718:30912" ph="..." />
-            <marker date="1560333803228" expanded="true" signature="44615:46307" ph="..." />
-            <marker date="1560333803228" expanded="true" signature="44626:46306" ph="..." />
-            <marker date="1560333803228" expanded="true" signature="44655:45661" ph="..." />
-            <marker date="1560333803228" expanded="true" signature="44693:45660" ph="..." />
-            <marker date="1560333803228" expanded="true" signature="45691:46294" ph="..." />
+            <element signature="e#9439#9460#0#HTML" expanded="true" />
+            <element signature="e#9903#16744#0#HTML" expanded="false" />
+            <marker date="1560333891099" expanded="true" signature="15584:15793" ph="{...}" />
+            <marker date="1560333891099" expanded="true" signature="15643:15792" ph="..." />
+            <marker date="1560333891099" expanded="true" signature="15800:15952" ph="..." />
+            <marker date="1560333891099" expanded="true" signature="21709:21767" ph="{...}" />
+            <marker date="1560333891099" expanded="true" signature="22663:22855" ph="..." />
+            <marker date="1560333891099" expanded="true" signature="22778:22855" ph="..." />
+            <marker date="1560333891099" expanded="true" signature="30740:30934" ph="..." />
+            <marker date="1560333891099" expanded="true" signature="44637:46329" ph="..." />
+            <marker date="1560333891099" expanded="true" signature="44648:46328" ph="..." />
+            <marker date="1560333891099" expanded="true" signature="44677:45683" ph="..." />
+            <marker date="1560333891099" expanded="true" signature="44715:45682" ph="..." />
+            <marker date="1560333891099" expanded="true" signature="45713:46316" ph="..." />
           </folding>
         </state>
       </provider>
