@@ -95,7 +95,7 @@
             <script src="{{asset('js/nicEdit.js')}}" type="text/javascript"></script>
             <script type="text/javascript">
                 bkLib.onDomLoaded(function() {
-                    new nicEditor({fullPanel : true}).panelInstance('input-description');
+                    new nicEditor({fullPanel : true,maxHeight : 300}).panelInstance('input-description');
                   });
             </script>
 
