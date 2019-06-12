@@ -7,12 +7,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>appAdmin</title>
+    <title>{{ config('app.name', '') }}</title>
 
     <!-- Scripts -->
     <script src="public/js/app.js" defer></script>
 
-    <link rel="shortcut icon" href="{{asset('assets/media/a.png')}}" />
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="{{asset('/assets/vendors/general/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css')}}" rel="stylesheet" type="text/css" />

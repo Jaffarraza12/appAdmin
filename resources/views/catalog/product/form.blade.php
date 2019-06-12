@@ -1,4 +1,5 @@
 @extends('layout.master')
+
 @section('css')
     <style>
         .nav-tabs.nav-tabs-line.nav.nav-tabs .nav-link, .nav-tabs.nav-tabs-line a.nav-link {
@@ -29,6 +30,7 @@
         }
     </style>
 @endsection
+
 @section('header')
     <form action="{{$actionUrl}}" method="POST" class="kt-form kt-form--label-right">
         {!! csrf_field() !!}
@@ -90,6 +92,17 @@
 
         @endsection
         @section('content')
+            <script src="{{asset('js/nicEdit.js')}}" type="text/javascript"></script>
+            <script type="text/javascript">
+                bkLib.onDomLoaded(function() {
+                    new nicEditor().panelInstance('area1');
+                    new nicEditor({fullPanel : true}).panelInstance('input-description');
+                    new nicEditor({iconsPath : '../nicEditorIcons.gif'}).panelInstance('area3');
+                    new nicEditor({buttonList : ['fontSize','bold','italic','underline','strikeThrough','subscript','superscript','html','image']}).panelInstance('area4');
+                    new nicEditor({maxHeight : 100}).panelInstance('area5');
+                });
+            </script>
+
             <div class="kt-content  kt-grid__item kt-grid__item--fluid" id="kt_content">
                 @if(Session::has('success'))
                     <div class="alert alert-success" role="alert">
@@ -142,7 +155,7 @@
  <div class="form-group row">
                                                 <label class="col-2 col-form-label" for="input-description">{{ 'Description' }}</label>
                                                 <div class="col-10">
-                                                    <textarea name="description" placeholder="{{ 'Description' }}"  data-provide="markdown"  id="input-description" class="form-control">{{ (old('description') ) ? old('description') : $product->description }}</textarea>                                     </div>
+                                                    <textarea name="description" placeholder="{{ 'Description' }}"    id="input-description" class="form-control">{{ (old('description') ) ? old('description') : $product->description }}</textarea>                                     </div>
                                             </div>
 
 
