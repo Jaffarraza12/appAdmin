@@ -465,7 +465,6 @@
                                                 <label class="col-2 col-form-label" for="input-meta-title">{{ 'Meta Title' }}</label>
                                                 <div class="col-10">
                                                     <input type="text" name="meta_title" value="{{ (old('meta_title') ? old('meta_title') : $product->meta_title )}}" placeholder="{{ 'Meta Title' }}" id="input-meta-title" class="form-control" />
-                                                    <div class="text-danger">{{ '' }}</div>
                                                 </div>
                                             </div>
                                             <div class="form-group row">
