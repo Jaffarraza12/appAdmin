@@ -28,6 +28,9 @@
             background: #ece8f0;
             padding:10px 10px;
         }
+        .error-bor{
+            border-color:#fd397a;
+        }
     </style>
 @endsection
 
@@ -163,6 +166,14 @@
                                     <div class="kt-portlet">
                                         <div class="kt-portlet__body">
                                             <div class="form-group row">
+                                                <label class="col-2 col-form-label"  for="input-sku">{{ 'SKU' }}</label>
+                                                <div class="col-3">
+                                                    <input type="number" class="form-control" name="sku"  value="{{(old('sku') ) ? old('sku') :  $product->sku}}" id="input-image" />
+
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+
                                                 <label class="col-2 col-form-label ">Categories</label>
                                                 <div class="col-10">
                                                     @if(old('category.0'))
@@ -496,6 +507,11 @@
 
     <script>
         $(document).ready(function(){
+            $.each('.tab-pane',function(i,val){
+                if($(this).find('text-danger').length > 1 ){
+                        $(this).add('error-bor')
+                }
+            });
 
             $(document).on('click','.add_variation',function () {
                 var ind = $('select[name="variation[]"]').length + 1
