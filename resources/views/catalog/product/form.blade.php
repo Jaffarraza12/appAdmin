@@ -168,7 +168,7 @@
                                             <div class="form-group row">
                                                 <label class="col-2 col-form-label"  for="input-sku">{{ 'SKU' }}</label>
                                                 <div class="col-3">
-                                                    <input type="number" class="form-control" name="sku"  value="{{(old('sku') ) ? old('sku') :  $product->sku}}" id="input-image" />
+                                                    <input type="text" class="form-control" name="sku"  value="{{(old('sku') ) ? old('sku') :  $product->sku}}" id="input-image" />
 
                                                 </div>
                                             </div>
