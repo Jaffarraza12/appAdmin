@@ -29,7 +29,7 @@
             padding:10px 10px;
         }
         .error-bor{
-            border-color:#fd397a;
+            border: 1px solid #fd397a;
         }
     </style>
 @endsection
