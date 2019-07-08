@@ -118,18 +118,18 @@
                         <div class="kt-portlet__head">
                             <div class="kt-portlet__head-toolbar">
                                 <ul class="nav nav-tabs nav-tabs-line nav-tabs-line-success" role="tablist">
-                                    <li class="nav-item"><a class="nav-link active" href="#tab_general" data-toggle="tab">{{ 'General' }}</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#tab_data" data-toggle="tab">{{ 'Data' }}</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#tab_image" data-toggle="tab">{{ 'Images' }}</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#tab_variation" data-toggle="tab">{{ 'Variations' }}</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#tab_special" data-toggle="tab">{{ 'Specials' }}</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="#tab_seo" data-toggle="tab">{{ 'SEO' }}</a></li>
+                                    <li class="nav-item tab-item-jr"><a class="nav-link active" href="#tab_general" data-toggle="tab">{{ 'General' }}</a></li>
+                                    <li class="nav-item tab-item-jr"><a class="nav-link" href="#tab_data" data-toggle="tab">{{ 'Data' }}</a></li>
+                                    <li class="nav-item tab-item-jr"><a class="nav-link" href="#tab_image" data-toggle="tab">{{ 'Images' }}</a></li>
+                                    <li class="nav-item tab-item-jr"><a class="nav-link" href="#tab_variation" data-toggle="tab">{{ 'Variations' }}</a></li>
+                                    <li class="nav-item tab-item-jr"><a class="nav-link" href="#tab_special" data-toggle="tab">{{ 'Specials' }}</a></li>
+                                    <li class="nav-item tab-item-jr"><a class="nav-link" href="#tab_seo" data-toggle="tab">{{ 'SEO' }}</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="kt-portlet__body">
                             <div class="tab-content">
-                                <div class="tab-pane active" id="tab_general" role="tabpanel">
+                                <div class="tab-pane active tab-jr" id="tab_general" role="tabpanel">
                                     <div class="kt-portlet">
                                         <div class="kt-portlet__body">
                                             @if(isset($id))
@@ -162,7 +162,7 @@
 
                                     </div>
                                 </div>
-                                <div class="tab-pane" id="tab_data" role="tabpanel">
+                                <div class="tab-pane tab-jr" id="tab_data" role="tabpanel">
                                     <div class="kt-portlet">
                                         <div class="kt-portlet__body">
                                             <div class="form-group row">
@@ -508,8 +508,11 @@
     <script>
         $(document).ready(function(){
 
-            $.each('.tab-jr',function(i,val){
-                
+            $.each($('.tab-jr'),function(i,val){
+               if($(this).find('.text-danger').length > 0){
+                   $('.tab-item-jr').eq(i).addClass('error-bor')
+               }
+
             });
 
             $(document).on('click','.add_variation',function () {
