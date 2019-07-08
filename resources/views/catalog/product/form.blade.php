@@ -253,7 +253,7 @@
 
                                     </div>
                                 </div>
-                                <div class="tab-pane" id="tab_image" role="tabpanel">
+                                <div class="tab-pane tab-jr" id="tab_image" role="tabpanel">
                                     <div class="kt-portlet">
                                         <div class="kt-portlet__body">
                                             <div class="form-group row table-responsive">
@@ -297,7 +297,7 @@
 
                                     </div>
                                 </div>
-                                <div class="tab-pane" id="tab_variation" role="tabpanel">
+                                <div class="tab-pane tab-jr" id="tab_variation" role="tabpanel">
                                     <div class="kt-portlet">
                                         <div class="kt-portlet__body ">
                                           <div class="variation-box">
@@ -431,7 +431,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane" id="tab_special" role="tabpanel">
+                                <div class="tab-pane tab-jr" id="tab_special" role="tabpanel">
                                     <div class="kt-portlet">
                                         <div class="kt-portlet__body">
                                             <div class="form-group row">
@@ -448,7 +448,7 @@
 
                                     </div>
                                 </div>
-                                <div class="tab-pane" id="tab_seo" role="tabpanel">
+                                <div class="tab-pane tab-jr" id="tab_seo" role="tabpanel">
                                     <div class="kt-portlet">
                                         <div class="kt-portlet__body">
                                             <div class="form-group row">
@@ -507,10 +507,9 @@
 
     <script>
         $(document).ready(function(){
-            $.each('.tab-pane',function(i,val){
-                if($(this).find('text-danger').length > 1 ){
-                        $(this).add('error-bor')
-                }
+
+            $.each('.tab-jr',function(i,val){
+                
             });
 
             $(document).on('click','.add_variation',function () {
