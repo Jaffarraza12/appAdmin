@@ -32,7 +32,7 @@ class CategoryController extends Controller
         $category = new Category;
         $img_thumb = asset('assets/images.png');
         $size_chart_thumb = asset('assets/images.png');
-        return view('catalog.category.form',compact('category','heading','categories','actionUrl','method','img_thumb','size_chart_thumb'));
+        return view('catalog.category.form',compact('category','heading','categories','actionUrl','img_thumb','size_chart_thumb'));
     }
     public function store(Request $request){
 
