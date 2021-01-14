@@ -17,8 +17,8 @@ class FileManager extends Controller
             $this->HTTPS_CATALOG = 'http://localhost/carve/resources/catalog';
             $this->DIR_IMAGE = 'C:\xampp\htdocs\carve\resources\catalog';
         } else {
-            $this->HTTPS_CATALOG = 'http://carve.pk/demo/resources/catalog';
-            $this->DIR_IMAGE = '/home/carve/public_html/demo/resources/catalog';
+            $this->HTTPS_CATALOG = 'https://thehigiene.com/upload/resources/catalog';
+            $this->DIR_IMAGE = '/home/thehigiene/public_html/demo/resources/catalog';
         }
     }
 
