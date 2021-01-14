@@ -52,9 +52,9 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://carve.pk/secure'),
+    'url' => env('APP_URL', 'https://thehigiene.com/94181737/'),
 
-    'asset_url' => env('ASSET_URL', 'secure/resources'),
+    'asset_url' => env('ASSET_URL', '94181737/resources'),
 
     /*
     |--------------------------------------------------------------------------
