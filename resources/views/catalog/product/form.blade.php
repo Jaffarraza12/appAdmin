@@ -27,6 +27,9 @@
         .variation-option{
             background: #ece8f0;
             padding:10px 10px;
+            margin:20px 20px;
+            width:100%;
+            
         }
         .error-bor{
             border: 1px solid #fd397a;
